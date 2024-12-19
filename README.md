@@ -38,7 +38,19 @@ benefits of Daytona (our fav. Development Environment Manager
 daytona create https://github.com/daytonaio/sample-astro-blog.git
 ```
 
-2. Setting up environment variables for Sanity.io: The above command will set up
+2. If the `postCreateCommand` fails, please run the following command to install the dependencies:
+
+```bash
+pnpm config set store-dir /tmp/pnpm-store && pnpm install
+```
+
+Then, run the following command to set up the environment variables:
+
+```bash
+/bin/bash ./create-env-file.sh
+```
+
+3. Setting up environment variables for Sanity.io: The above command will set up
    all the required dependencies using `pnpm` and create a `.env` file:
 
 ```sh
@@ -47,13 +59,13 @@ SANITY_STUDIO_DATASET="" #REQUIRED - DEFAULT - `production`
 SANITY_STUDIO_TOKEN="" #REQUIRED -  Generate from `Sanity Project > API > Tokens`
 ```
 
-3. Start the Astro Server: This command will start the Astro development server:
+4. Start the Astro Server: This command will start the Astro development server:
 
 ```bash
 pnpm run dev
 ```
 
-4. Start the Sanity CMS: In another terminal window, run the following command
+5. Start the Sanity CMS: In another terminal window, run the following command
    to start the Sanity Development Studio, where you can edit all the content
    visible to users:
 
@@ -61,8 +73,8 @@ pnpm run dev
 pnpm run sanity-dev
 ```
 
-5. Hold your horses for a few second!!
-6. Open Sanity Studio: Open your browser and navigate to `http://localhost:3333`
+6. Hold your horses for a few second!!
+7. Open Sanity Studio: Open your browser and navigate to `http://localhost:3333`
    to access the Sanity Studio.
    - Add a new blog to your site: For starters, you can add a sample blog from the project files. Navigate to `src/content/blogs/` and paste the content on the Sanity Studio and click `Publish` to see how it looks on the site.
 
